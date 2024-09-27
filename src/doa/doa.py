@@ -114,10 +114,6 @@ class EnhancedIsolationForestDetector:
         n_projections,
         n_components,
     ):
-        self.score_scaler = sklearn.preprocessing.MinMaxScaler()
-        self.isotonic_regressor = sklearn.isotonic.IsotonicRegression(
-            out_of_bounds="clip"
-        )
         self.forests = [
             sklearn.pipeline.make_pipeline(
                 sklearn.preprocessing.StandardScaler(),
